@@ -28,6 +28,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Attwell Food — Famous for the Sausages | Etobicoke</title>
 <meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage stand at 272 Attwell Dr, Etobicoke. Hot, fresh, made to order. Open weekdays 11am–3pm.">
+<link rel="canonical" href="https://shawnhyd3-crypto.github.io/attwell-food-website/">
+<meta name="theme-color" content="#9e1b1b">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239e1b1b'/%3E%3Crect x='5' y='13' width='22' height='6' rx='3' fill='%23f4d9a6'/%3E%3Cpath d='M7 16c3 1.6 15 1.6 18 0' stroke='%23e8a33d' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<!-- Open Graph / social -->
+<meta property="og:title" content="Attwell Food — Famous for the Sausages">
+<meta property="og:description" content="A neighbourhood hotdog & sausage stand at 272 Attwell Dr, Etobicoke. Hot, fresh, made to order. Open weekdays 11am–3pm.">
+<meta property="og:image" content="https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png">
+<meta property="og:url" content="https://shawnhyd3-crypto.github.io/attwell-food-website/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Attwell Food — Famous for the Sausages">
+<meta name="twitter:description" content="Neighbourhood hotdog & sausage stand in Etobicoke. Hot, fresh, made to order.">
+<meta name="twitter:image" content="https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png">
+<!-- LocalBusiness (FastFood) structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FastFood",
+  "name":"Attwell Food",
+  "description":"Neighbourhood hotdog & sausage stand — hot, fresh, made to order.",
+  "url":"https://shawnhyd3-crypto.github.io/attwell-food-website/",
+  "telephone":"+1-647-991-7778",
+  "priceRange":"$",
+  "servesCuisine":["Hot Dogs","Sausages","Fries","Fast Food"],
+  "image":"https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png",
+  "address":{"@type":"PostalAddress","streetAddress":"272 Attwell Dr","addressLocality":"Etobicoke","addressRegion":"ON","postalCode":"M9W 6M3","addressCountry":"CA"},
+  "geo":{"@type":"GeoCoordinates","latitude":43.6959953,"longitude":-79.5910553},
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"15:00"}],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"31"}
+}
+</script>
+<!-- Google Analytics 4 — drop in the Measurement ID once the Attwell Food GA4 property is created (HTS standard).
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,6 +85,10 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:0 0 8px 0;font-weight:700}
+  .skip:focus{left:0}
+  a:focus-visible,button:focus-visible,.btn:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
   h1,h2,h3,.display{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.5px;line-height:1;text-transform:uppercase}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
@@ -131,6 +171,14 @@
   .row .pr{font-family:'Anton',sans-serif;color:var(--red);font-size:19px;white-space:nowrap}
   .row .pr.tbd{color:#cdbfac}
   .menu-note{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
+  .quotes{background:var(--cream)}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .qcard .qs{color:#c98a1e;letter-spacing:2px;font-size:14px}
+  .qcard p{margin:10px 0 16px;color:var(--ink);font-size:16px;flex:1}
+  .qcard .who{font-weight:700;font-size:14px}
+  .qcard .who span{display:block;color:var(--muted);font-weight:500;font-size:12px;margin-top:2px}
+  @media(max-width:880px){.qgrid{grid-template-columns:1fr}}
 
   /* About */
   #about{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%)}
@@ -197,6 +245,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#menu">Skip to menu</a>
 
 <!-- HEADER -->
 <header>
@@ -224,6 +273,7 @@
 
 <!-- HERO -->
 <a id="top"></a>
+<main id="main">
 <section class="hero">
   <div class="wrap">
     <div>
@@ -329,6 +379,23 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="quotes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">From the regulars</span>
+      <h2>People don't stop raving</h2>
+      <p>Straight from their Google reviews.</p>
+    </div>
+    <div class="qgrid">
+      <div class="qcard"><div class="qs">★★★★★</div><p>"Had the best hot dog of my life. Super high quality ingredients for a very fair price. Plus super nice guy and great service."</p><div class="who">Nigel T.<span>Google review</span></div></div>
+      <div class="qcard"><div class="qs">★★★★★</div><p>"The food is always hot, fresh and made to order. I've had the hotdog and the sausage — so good!"</p><div class="who">Stephanie M.<span>Google review</span></div></div>
+      <div class="qcard"><div class="qs">★★★★★</div><p>"Unbeatable fries and price. Must give it a shot and support a small business."</p><div class="who">Verified Google review</div></div>
+    </div>
+    <p class="menu-note">Real Google reviews (4.6★ from 31). Names shown as on Google — confirm or anonymize before launch.</p>
+  </div>
+</section>
+
 <!-- VISIT -->
 <section id="visit">
   <div class="wrap">
@@ -340,82 +407,4 @@
     <div class="visit-grid">
       <div class="info-card">
         <h3>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></svg>
-          Hours
-        </h3>
-        <div class="hours-row"><span class="d">Monday</span><span class="h">11:00am – 3:00pm</span></div>
-        <div class="hours-row"><span class="d">Tuesday</span><span class="h">11:00am – 3:00pm</span></div>
-        <div class="hours-row"><span class="d">Wednesday</span><span class="h">11:00am – 3:00pm</span></div>
-        <div class="hours-row"><span class="d">Thursday</span><span class="h">11:00am – 3:00pm</span></div>
-        <div class="hours-row"><span class="d">Friday</span><span class="h">11:00am – 3:00pm</span></div>
-        <div class="hours-row closed"><span class="d">Saturday</span><span class="h">Closed</span></div>
-        <div class="hours-row closed"><span class="d">Sunday</span><span class="h">Closed</span></div>
-        <div style="margin-top:22px">
-          <div class="contact-line">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>
-            <a href="tel:+16479917778">647-991-7778</a>
-          </div>
-          <div class="contact-line">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></svg>
-            272 Attwell Dr, Etobicoke, ON M9W 6M3
-          </div>
-        </div>
-        <div class="visit-cta">
-          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Attwell+Food+272+Attwell+Dr+Etobicoke" target="_blank" rel="noopener">Directions</a>
-          <a class="btn dark" href="tel:+16479917778">Call ahead</a>
-        </div>
-        <p class="pay-note">Free parking on-site. Cards, debit &amp; tap accepted. Outdoor cart — hours can vary seasonally, so call ahead in winter.</p>
-      </div>
-      <div class="map-wrap">
-        <iframe class="map-embed" title="Map to Attwell Food" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.700222502024!2d-79.5910553!3d43.69599529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b39340b953dd3%3A0x92366fae3e42fe04!2sAttwell%20Food!5e0!3m2!1sen!2s!4v1728724723195!5m2!1sen!2s"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="name">ATT<b>WELL</b> FOOD</div>
-        <p>A neighbourhood hotdog &amp; sausage stand. Hot, fresh, made to order — at the end of the driveway, 272 Attwell Dr, Etobicoke.</p>
-        <div class="socials">
-          <a href="#" aria-label="Instagram" title="Add Instagram link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4Zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.8-11.2a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5Z"/></svg>
-          </a>
-          <a href="#" aria-label="Facebook" title="Add Facebook link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.2 0-4 1.8-4 4V12H7v3.5h3V22h3.5v-6.5H16L17 12h-3.5V9.5c0-.3.2-.5.5-.5Z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div>
-        <h5>Menu</h5>
-        <ul>
-          <li><a href="#menu">Sausages &amp; hotdogs</a></li>
-          <li><a href="#menu">Fresh-cut fries</a></li>
-          <li><a href="#menu">Drinks</a></li>
-          <li><a href="#about">Our story</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Visit</h5>
-        <ul>
-          <li>272 Attwell Dr, Etobicoke</li>
-          <li>ON M9W 6M3</li>
-          <li><a href="tel:+16479917778">647-991-7778</a></li>
-          <li>Mon–Fri · 11am–3pm</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <span>© 2026 Attwell Food. All rights reserved.</span>
-      <span>Rough draft · website by <a href="https://hydetech.ca" target="_blank" rel="noopener">Hyde Tech Solutions</a></span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
-                                                                                                                                                                                                                                                                                
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 

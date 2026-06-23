@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shawnhyd3-crypto.github.io/attwell-food-website/sitemap.xml
