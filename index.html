@@ -12,13 +12,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Attwell Food — Famous for the Sausages | Etobicoke</title>
-<meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke, serving since 1994. Sausages, hot dogs, burgers, fries & poutine. Open weekdays 11am–3pm.">
+<meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke, serving since 1994. Sausages, hot dogs, burgers, fries & poutine. Open weekdays 11am–4pm.">
 <link rel="canonical" href="https://attwellfood.com/">
 <meta name="theme-color" content="#9e1b1b">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta property="og:title" content="Attwell Food — Famous for the Sausages">
-<meta property="og:description" content="A neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke — serving since 1994. Open weekdays 11am–3pm.">
+<meta property="og:description" content="A neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke — serving since 1994. Open weekdays 11am–4pm.">
 <meta property="og:image" content="https://attwellfood.com/og-image.png">
 <meta property="og:url" content="https://attwellfood.com/">
 <meta property="og:type" content="website">
@@ -40,7 +40,7 @@
   "image":"https://attwellfood.com/og-image.png",
   "address":{"@type":"PostalAddress","streetAddress":"272 Attwell Dr","addressLocality":"Etobicoke","addressRegion":"ON","postalCode":"M9W 6M3","addressCountry":"CA"},
   "geo":{"@type":"GeoCoordinates","latitude":43.6959953,"longitude":-79.5910553},
-  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"15:00"}],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"16:00"}],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"31"}
 }
 </script>
@@ -107,6 +107,10 @@
   .facts{background:var(--red);color:var(--cream)}
   .facts .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;padding:15px 22px;font-weight:600;font-size:14.5px;text-align:center}
   .facts .dot{color:var(--mustard)}
+  .stand{padding:42px 0 0}
+  .standfig{margin:0}
+  .standfig img{width:100%;height:clamp(280px,40vw,450px);object-fit:cover;object-position:center;border-radius:18px;box-shadow:var(--shadow)}
+  .standfig figcaption{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(20px,3vw,28px);color:var(--red);text-align:center;margin-top:14px;transform:rotate(-1deg)}
 
   /* Section heads */
   section{padding:74px 0}
@@ -202,7 +206,6 @@
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav class="links" id="nav">
       <a href="#menu">Menu</a>
-      <a href="#story">Our Story</a>
       <a href="#visit">Visit</a>
       <a class="btn" href="tel:+16479917778">Call 647-991-7778</a>
     </nav>
@@ -225,7 +228,7 @@
       </div>
       <div class="meta">
         <span><span class="star">★</span> 4.6 on Google · 31 reviews</span>
-        <span>Mon–Fri · 11am–3pm</span>
+        <span>Mon–Fri · 11am–4pm</span>
         <span>Dine-in &amp; takeout</span>
       </div>
     </div>
@@ -247,6 +250,16 @@
     <span>Debit, credit &amp; cash</span>
   </div>
 </div>
+
+<!-- STAND -->
+<section class="stand">
+  <div class="wrap">
+    <figure class="standfig">
+      <img src="assets/cart.jpg" alt="The red Attwell Food cart at the end of the driveway, 272 Attwell Dr, Etobicoke">
+      <figcaption>Find the red cart at the end of the driveway.</figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- MENU -->
 <section id="menu">
@@ -309,11 +322,11 @@
     <div class="visit-grid">
       <div class="vcard">
         <h3>Hours</h3>
-        <div class="hrow"><span>Monday</span><span class="h">11am – 3pm</span></div>
-        <div class="hrow"><span>Tuesday</span><span class="h">11am – 3pm</span></div>
-        <div class="hrow"><span>Wednesday</span><span class="h">11am – 3pm</span></div>
-        <div class="hrow"><span>Thursday</span><span class="h">11am – 3pm</span></div>
-        <div class="hrow"><span>Friday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow"><span>Monday</span><span class="h">11am – 4pm</span></div>
+        <div class="hrow"><span>Tuesday</span><span class="h">11am – 4pm</span></div>
+        <div class="hrow"><span>Wednesday</span><span class="h">11am – 4pm</span></div>
+        <div class="hrow"><span>Thursday</span><span class="h">11am – 4pm</span></div>
+        <div class="hrow"><span>Friday</span><span class="h">11am – 4pm</span></div>
         <div class="hrow c"><span>Saturday</span><span class="h">Closed</span></div>
         <div class="hrow c"><span>Sunday</span><span class="h">Closed</span></div>
         <div style="margin-top:18px">
@@ -328,25 +341,6 @@
       </div>
       <div class="mapwrap">
         <iframe class="map" title="Map to Attwell Food" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.700222502024!2d-79.5910553!3d43.69599529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b39340b953dd3%3A0x92366fae3e42fe04!2sAttwell%20Food!5e0!3m2!1sen!2s!4v1728724723195!5m2!1sen!2s"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section id="story">
-  <div class="wrap">
-    <div class="story-grid">
-      <div class="story-photos">
-        <img class="big" src="assets/cart.jpg" alt="The red Attwell Food cart parked on Attwell Drive">
-        <img class="small" src="assets/sausage.jpg" alt="A grilled sausage on a bun with toppings">
-      </div>
-      <div>
-        <span class="kick">our story</span>
-        <h2 style="font-size:clamp(28px,4.4vw,42px);margin-top:2px">The little red cart at the end of the driveway</h2>
-        <p>Park on the Catch The Fire lot, follow the smell of the grill, and you'll find the red Attwell Food cart that's been feeding the neighbourhood since 1994.</p>
-        <p>It's nothing fancy — and that's the point. Good sausages and dogs, french fries, fair prices, and a friendly face. Everything's made to order while you wait.</p>
-        <span class="badge-line">★ 4.6 from 31 Google reviews — "best hot dog of my life"</span>
       </div>
     </div>
   </div>
@@ -383,7 +377,7 @@
           <li><a href="#menu">Sausages &amp; hot dogs</a></li>
           <li><a href="#menu">Burgers &amp; combos</a></li>
           <li><a href="#menu">Fries &amp; poutine</a></li>
-          <li><a href="#story">Our story</a></li>
+          <li><a href="#reviews">Reviews</a></li>
         </ul>
       </div>
       <div>
@@ -392,7 +386,7 @@
           <li>272 Attwell Dr, Etobicoke</li>
           <li>ON M9W 6M3</li>
           <li><a href="tel:+16479917778">647-991-7778</a></li>
-          <li>Mon–Fri · 11am–3pm</li>
+          <li>Mon–Fri · 11am–4pm</li>
         </ul>
       </div>
     </div>
@@ -405,4 +399,4 @@
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
