@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--
+  ATTWELL FOOD — WEBSITE ROUGH DRAFT  (v1)
+  Prepared by Hyde Tech Solutions · 2026-06-23
+
+  STATUS: Rough draft / mockup for owner review. Single self-contained HTML file.
+
+  CONFIRMED FACTS (from public listings, June 2026):
+    • 272 Attwell Dr, Etobicoke, ON M9W 6M3 (Catch The Fire property, end of the driveway)
+    • Phone 647-991-7778 · Mon–Fri 11:00am–3:00pm · closed Sat/Sun
+    • Known for the $5 burger + fries; affordable, fast, casual, family-run
+    • Cards / debit / tap accepted · dine-in + takeaway · vegetarian options
+    • 4.5–4.8★ across listings · owners support feeding children overseas
+
+  PLACEHOLDERS TO REPLACE WITH OWNER INPUT:
+    • Real menu items + prices (only the $5 burger is publicly confirmed)
+    • Real food/storefront photos (swap the dashed "PHOTO" blocks)
+    • Logo (current wordmark is a placeholder), social links, online-order link
+    • Seasonal hours note (one review mentioned a winter closure — confirm)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attwell Food — The $5 Burger | Etobicoke</title>
+<meta name="description" content="Attwell Food — a friendly lunch counter at 272 Attwell Dr, Etobicoke. Home of the famous $5 burger and unbeatable fries. Open weekdays 11am–3pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char:#1c1815;        /* charcoal */
+    --char-soft:#2a2521;
+    --cream:#fff7ec;       /* warm cream */
+    --cream-2:#fdeed8;
+    --flame:#e1442e;       /* tomato / flame */
+    --flame-dark:#bf3322;
+    --mustard:#f4a92c;     /* mustard accent */
+    --ink:#1c1815;
+    --muted:#6b625a;
+    --line:#e7dccb;
+    --radius:18px;
+    --shadow:0 18px 40px -20px rgba(28,24,21,.45);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.5px;line-height:1;text-transform:uppercase}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .accent{color:var(--flame)}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(28,24,21,.96);backdrop-filter:blur(8px);border-bottom:3px solid var(--flame)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;color:var(--cream)}
+  .brand .mark{width:38px;height:38px;flex:none}
+  .brand .name{font-family:'Anton',sans-serif;font-size:23px;letter-spacing:1px;line-height:1;text-transform:uppercase;color:var(--cream)}
+  .brand .name b{color:var(--mustard);font-weight:400}
+  nav.links{display:flex;align-items:center;gap:28px}
+  nav.links a{color:var(--cream);font-weight:600;font-size:15px;opacity:.9;transition:opacity .15s}
+  nav.links a:hover{opacity:1;color:var(--mustard)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--flame);color:#fff;font-weight:700;
+    padding:11px 18px;border-radius:999px;font-size:15px;border:0;cursor:pointer;transition:transform .12s,background .15s}
+  .btn:hover{background:var(--flame-dark);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--cream);border:2px solid rgba(255,247,236,.35)}
+  .btn.ghost:hover{border-color:var(--mustard);color:var(--mustard);background:transparent}
+  .btn.dark{background:var(--char);color:var(--cream)}
+  .btn.dark:hover{background:var(--char-soft)}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px}
+  .menu-toggle span{display:block;width:26px;height:3px;background:var(--cream);border-radius:3px;margin:5px 0}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;background:
+      radial-gradient(120% 90% at 80% -10%, rgba(244,169,44,.20), transparent 60%),
+      linear-gradient(180deg,#221d19 0%, #1c1815 60%);
+    color:var(--cream);overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:78px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(244,169,44,.14);color:var(--mustard);
+    border:1px solid rgba(244,169,44,.35);padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.4px;text-transform:uppercase}
+  .hero h1{font-size:clamp(46px,7vw,86px);margin:20px 0 0}
+  .hero h1 .line2{color:var(--flame)}
+  .hero p.lede{font-size:19px;color:#e9ddcd;max-width:30ch;margin-top:18px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .hero .meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#cfc3b4;font-size:14px;font-weight:500}
+  .hero .meta b{color:var(--cream)}
+  .stars{display:inline-flex;align-items:center;gap:6px;color:var(--mustard);font-weight:700}
+
+  /* hero visual / price medallion */
+  .hero-art{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center}
+  .photo-hero{position:absolute;inset:0;border:2px dashed rgba(255,247,236,.28);border-radius:24px;
+    display:flex;align-items:center;justify-content:center;color:#a99a87;font-size:13px;font-weight:600;text-align:center;
+    background:linear-gradient(135deg, rgba(225,68,46,.10), rgba(244,169,44,.08))}
+  .medallion{position:relative;z-index:2;width:208px;height:208px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #ff6a3d, var(--flame) 55%, var(--flame-dark));
+    color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    box-shadow:0 24px 50px -18px rgba(225,68,46,.7), inset 0 4px 14px rgba(255,255,255,.25);
+    border:6px solid var(--cream);transform:rotate(-7deg)}
+  .medallion .small{font-family:'Anton',sans-serif;font-size:15px;letter-spacing:2px}
+  .medallion .price{font-family:'Anton',sans-serif;font-size:74px;line-height:.9;margin:2px 0}
+  .medallion .price sup{font-size:30px;vertical-align:super}
+  .medallion .small.b{font-size:18px;letter-spacing:3px}
+
+  /* ---------- Value strip ---------- */
+  .strip{background:var(--mustard);color:var(--char)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:18px 22px;text-align:center}
+  .strip .item{display:flex;align-items:center;justify-content:center;gap:11px;font-weight:700;font-size:15px}
+  .strip .item svg{flex:none}
+  .strip .sep{width:1px;background:rgba(28,24,21,.18)}
+
+  /* ---------- Sections ---------- */
+  section{padding:78px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .section-head .kicker{color:var(--flame);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:13px}
+  .section-head h2{font-size:clamp(32px,5vw,50px);margin:12px 0 14px}
+  .section-head p{color:var(--muted);font-size:17px}
+
+  /* Menu */
+  #menu{background:var(--cream)}
+  .menu-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start}
+  .feature-card{background:var(--char);color:var(--cream);border-radius:var(--radius);padding:34px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .feature-card .tag{position:absolute;top:20px;right:-42px;background:var(--flame);color:#fff;font-weight:800;font-size:12px;letter-spacing:1px;
+    padding:7px 52px;transform:rotate(38deg)}
+  .feature-card h3{font-size:34px;margin-bottom:6px}
+  .feature-card .pp{font-family:'Anton',sans-serif;color:var(--mustard);font-size:56px;line-height:1;margin:14px 0 6px}
+  .feature-card .pp sup{font-size:24px}
+  .feature-card p{color:#d9ccbb}
+  .photo-feature{margin-top:22px;height:170px;border:2px dashed rgba(255,247,236,.25);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:#9b8c79;font-size:13px;font-weight:600;text-align:center}
+  .menu-list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 22px;box-shadow:var(--shadow)}
+  .menu-list .mhd{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0 8px;border-bottom:2px solid var(--cream-2)}
+  .menu-list .mhd h4{font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.5px;text-transform:uppercase}
+  .menu-list .mhd .sample{font-size:11px;font-weight:700;color:#fff;background:var(--mustard);padding:3px 9px;border-radius:999px;letter-spacing:.5px}
+  .row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .row:last-child{border-bottom:0}
+  .row .nm{font-weight:600}
+  .row .nm small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+  .row .pr{font-family:'Anton',sans-serif;color:var(--flame);font-size:20px;white-space:nowrap}
+  .row .pr.tbd{color:#c9bdac}
+  .menu-note{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
+
+  /* About / community */
+  #about{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+  .photo-about{height:330px;border:2px dashed var(--line);border-radius:var(--radius);background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;color:#b3a48f;font-weight:600;font-size:13px;text-align:center}
+  .about-grid h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:18px}
+  .about-grid p{color:#4a423b;font-size:17px;margin-bottom:16px}
+  .cause{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--flame);
+    border-radius:12px;padding:18px 20px;margin-top:8px}
+  .cause svg{flex:none;margin-top:2px}
+  .cause b{display:block;margin-bottom:2px}
+  .cause span{color:var(--muted);font-size:15px}
+
+  /* Visit / hours / map */
+  #visit{background:var(--char);color:var(--cream)}
+  #visit .section-head h2{color:var(--cream)}
+  #visit .section-head .kicker{color:var(--mustard)}
+  #visit .section-head p{color:#c4b8a8}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .info-card{background:var(--char-soft);border:1px solid rgba(255,247,236,.10);border-radius:var(--radius);padding:28px}
+  .info-card h3{font-size:22px;color:var(--mustard);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .hours-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,247,236,.10);font-size:15px}
+  .hours-row:last-child{border-bottom:0}
+  .hours-row .d{color:#cfc3b4}
+  .hours-row .h{font-weight:700;color:var(--cream)}
+  .hours-row.closed .h{color:#8c7f70;font-weight:500}
+  .contact-line{display:flex;align-items:center;gap:13px;padding:11px 0;font-size:16px}
+  .contact-line svg{flex:none;color:var(--mustard)}
+  .contact-line a{font-weight:600}
+  .visit-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .map-embed{border:0;width:100%;height:100%;min-height:340px;border-radius:var(--radius);filter:grayscale(.15) contrast(1.05)}
+  .map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:340px}
+  .pay-note{margin-top:16px;font-size:13px;color:#a99a87}
+
+  /* ---------- Footer ---------- */
+  footer{background:#15110e;color:#bdb1a2;padding:50px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,247,236,.10)}
+  .foot-brand .name{font-family:'Anton',sans-serif;font-size:24px;color:var(--cream);letter-spacing:1px;text-transform:uppercase}
+  .foot-brand .name b{color:var(--mustard);font-weight:400}
+  .foot-brand p{margin-top:12px;font-size:14px;max-width:34ch}
+  footer h5{color:var(--cream);font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;font-weight:800}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:9px;font-size:14px}
+  footer a:hover{color:var(--mustard)}
+  .socials{display:flex;gap:12px;margin-top:6px}
+  .socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,247,236,.2);display:flex;align-items:center;justify-content:center;color:var(--cream)}
+  .socials a:hover{background:var(--flame);border-color:var(--flame)}
+  .copyright{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:13px;color:#8c7f70}
+  .copyright a{color:#a99a87;text-decoration:underline}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:880px){
+    .menu-toggle{display:block}
+    nav.links{position:absolute;top:70px;left:0;right:0;background:var(--char);flex-direction:column;align-items:stretch;
+      gap:0;padding:8px 22px 20px;border-bottom:3px solid var(--flame);display:none}
+    nav.links.open{display:flex}
+    nav.links a{padding:13px 0;border-bottom:1px solid rgba(255,247,236,.08)}
+    nav.links .btn{margin-top:12px;justify-content:center}
+    .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}
+    .hero-art{min-height:300px;margin-top:8px}
+    .menu-grid,.about-grid,.visit-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .strip .wrap{grid-template-columns:1fr;gap:14px}
+    .strip .sep{display:none}
+  }
+  @media(max-width:520px){
+    .foot-grid{grid-template-columns:1fr}
+    .hero .meta{gap:14px}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Attwell Food home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 21c0-7 7-12 16-12s16 5 16 12H8Z" fill="#f4a92c"/>
+        <rect x="6" y="21" width="36" height="6" rx="3" fill="#e1442e"/>
+        <path d="M8 30c0 4 4 7 9 7h14c5 0 9-3 9-7H8Z" fill="#c97a35"/>
+        <circle cx="17" cy="16" r="1.6" fill="#fff"/><circle cx="24" cy="14.5" r="1.6" fill="#fff"/><circle cx="31" cy="16" r="1.6" fill="#fff"/>
+      </svg>
+      <span class="name">ATT<b>WELL</b> FOOD</span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="nav">
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Visit</a>
+      <a class="btn" href="tel:+16479917778">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>
+        Call
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Lunch counter · 272 Attwell Dr, Etobicoke</span>
+      <h1>Big flavour.<br><span class="line2">Small price.</span></h1>
+      <p class="lede">Home of the famous $5 burger and the best fries in the neighbourhood — made fresh, served fast.</p>
+      <div class="cta">
+        <a class="btn" href="#menu">See the menu</a>
+        <a class="btn ghost" href="#visit">Get directions</a>
+      </div>
+      <div class="meta">
+        <span class="stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>
+          4.8 · loved locally
+        </span>
+        <span><b>Open</b> Mon–Fri · 11am–3pm</span>
+        <span><b>Dine-in</b> &amp; takeaway</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="photo-hero">PHOTO — hero shot of the<br>$5 burger &amp; fries goes here</div>
+      <div class="medallion" aria-label="Five dollar burger">
+        <span class="small">THE FAMOUS</span>
+        <span class="price"><sup>$</sup>5</span>
+        <span class="small b">BURGER</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALUE STRIP ===================== -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#1c1815"><path d="M3 11c0-4 4-7 9-7s9 3 9 7H3Zm0 3h18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3Zm2 5h14v1.5H5z"/></svg>
+      The $5 burger — a real meal, real cheap
+    </div>
+    <div class="sep"></div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#1c1815"><path d="M7 9h10l-1 11a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2L7 9Zm2-5h2v4H9zm4 0h2v4h-2z"/></svg>
+      Hand-cut fries you'll cross town for
+    </div>
+    <div class="sep"></div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#1c1815"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21Z"/></svg>
+      Every order helps feed kids overseas
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MENU ===================== -->
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The Menu</span>
+      <h2>Simple food, done right</h2>
+      <p>Burgers, fries and the classics — fresh off the grill on your lunch break.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="feature-card">
+        <span class="tag">SIGNATURE</span>
+        <h3>The $5 Burger</h3>
+        <div class="pp"><sup>$</sup>5</div>
+        <p>Our claim to fame: a juicy, satisfying burger that won't break your budget. The reason regulars keep coming back.</p>
+        <div class="photo-feature">PHOTO — the $5 burger, close up</div>
+      </div>
+      <div class="menu-list">
+        <div class="mhd"><h4>Off the Grill</h4><span class="sample">sample menu</span></div>
+        <div class="row"><span class="nm">The $5 Burger <small>the original — single patty, all the fixings</small></span><span class="pr">$5</span></div>
+        <div class="row"><span class="nm">Double Burger <small>twice the patty</small></span><span class="pr tbd">$—</span></div>
+        <div class="row"><span class="nm">Cheeseburger <small>add melted cheese</small></span><span class="pr tbd">$—</span></div>
+        <div class="row"><span class="nm">Veggie Option <small>vegetarian-friendly</small></span><span class="pr tbd">$—</span></div>
+
+        <div class="mhd"><h4>Sides</h4></div>
+        <div class="row"><span class="nm">Fresh-Cut Fries <small>the neighbourhood favourite</small></span><span class="pr tbd">$—</span></div>
+        <div class="row"><span class="nm">Loaded Fries <small>ask about the day's topping</small></span><span class="pr tbd">$—</span></div>
+
+        <div class="mhd"><h4>Drinks</h4></div>
+        <div class="row"><span class="nm">Pop / Bottled Water</span><span class="pr tbd">$—</span></div>
+        <div class="row"><span class="nm">Coffee <small>from next door at Attwell Coffee</small></span><span class="pr tbd">$—</span></div>
+      </div>
+    </div>
+    <p class="menu-note">Sample layout only — final menu items and prices to be confirmed with the owners. Cards, debit &amp; tap accepted.</p>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="photo-about">PHOTO — the counter / the owners / the sign</div>
+    <div>
+      <span class="section-head kicker" style="display:block;text-align:left">Our Story</span>
+      <h2>A friendly bite at the end of the driveway</h2>
+      <p>Tucked at the end of the driveway on the Catch The Fire property, Attwell Food is the kind of spot the neighbourhood is glad to have — quick, affordable, and run by people who genuinely care.</p>
+      <p>We keep it simple: good food at a fair price, served with a smile. No fuss, no gimmicks — just a great lunch that leaves room in your wallet.</p>
+      <div class="cause">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#e1442e"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21Z"/></svg>
+        <div>
+          <b>Good food for a good cause</b>
+          <span>The owners give back — proceeds help support efforts to feed children overseas. Lunch here helps further than your table.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VISIT ===================== -->
+<section id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Come Visit</span>
+      <h2>Find us &amp; hours</h2>
+      <p>Weekday lunches at 272 Attwell Dr — easy to reach, easy to park.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="info-card">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></svg>
+          Hours
+        </h3>
+        <div class="hours-row"><span class="d">Monday</span><span class="h">11:00am – 3:00pm</span></div>
+        <div class="hours-row"><span class="d">Tuesday</span><span class="h">11:00am – 3:00pm</span></div>
+        <div class="hours-row"><span class="d">Wednesday</span><span class="h">11:00am – 3:00pm</span></div>
+        <div class="hours-row"><span class="d">Thursday</span><span class="h">11:00am – 3:00pm</span></div>
+        <div class="hours-row"><span class="d">Friday</span><span class="h">11:00am – 3:00pm</span></div>
+        <div class="hours-row closed"><span class="d">Saturday</span><span class="h">Closed</span></div>
+        <div class="hours-row closed"><span class="d">Sunday</span><span class="h">Closed</span></div>
+
+        <div style="margin-top:22px">
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>
+            <a href="tel:+16479917778">647-991-7778</a>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></svg>
+            272 Attwell Dr, Etobicoke, ON M9W 6M3
+          </div>
+        </div>
+        <div class="visit-cta">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Attwell+Food+272+Attwell+Dr+Etobicoke" target="_blank" rel="noopener">Directions</a>
+          <a class="btn dark" href="tel:+16479917778">Call ahead</a>
+        </div>
+        <p class="pay-note">Free parking on-site. Cards, debit &amp; tap accepted. Hours can vary seasonally — call ahead in winter.</p>
+      </div>
+      <div class="map-wrap">
+        <iframe class="map-embed" title="Map to Attwell Food" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.700222502024!2d-79.5910553!3d43.69599529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b39340b953dd3%3A0x92366fae3e42fe04!2sAttwell%20Food!5e0!3m2!1sen!2s!4v1728724723195!5m2!1sen!2s"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">ATT<b>WELL</b> FOOD</div>
+        <p>A friendly neighbourhood lunch counter. Home of the famous $5 burger — at the end of the driveway, 272 Attwell Dr, Etobicoke.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram" title="Add Instagram link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4Zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.8-11.2a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5Z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" title="Add Facebook link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5.5h-3c-2.2 0-4 1.8-4 4V12H7v3.5h3V22h3.5v-6.5H16L17 12h-3.5V9.5c0-.3.2-.5.5-.5Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">The $5 Burger</a></li>
+          <li><a href="#menu">Sides &amp; fries</a></li>
+          <li><a href="#menu">Drinks</a></li>
+          <li><a href="#about">Our story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>272 Attwell Dr, Etobicoke</li>
+          <li>ON M9W 6M3</li>
+          <li><a href="tel:+16479917778">647-991-7778</a></li>
+          <li>Mon–Fri · 11am–3pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 Attwell Food. All rights reserved.</span>
+      <span>Rough draft · website by <a href="https://hydetech.ca" target="_blank" rel="noopener">Hyde Tech Solutions</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
