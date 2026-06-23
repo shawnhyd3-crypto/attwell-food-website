@@ -15,7 +15,8 @@
 <meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke, serving since 1994. Sausages, hot dogs, burgers, fries & poutine. Open weekdays 11am–3pm.">
 <link rel="canonical" href="https://shawnhyd3-crypto.github.io/attwell-food-website/">
 <meta name="theme-color" content="#9e1b1b">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239e1b1b'/%3E%3Crect x='5' y='13' width='22' height='6' rx='3' fill='%23f4d9a6'/%3E%3Cpath d='M7 16c3 1.6 15 1.6 18 0' stroke='%23e8a33d' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
 <meta property="og:title" content="Attwell Food — Famous for the Sausages">
 <meta property="og:description" content="A neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke — serving since 1994. Open weekdays 11am–3pm.">
 <meta property="og:image" content="https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png">
@@ -72,9 +73,10 @@
 
   /* Header */
   header{position:sticky;top:0;z-index:50;background:var(--red);border-bottom:2px solid var(--red-dark)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{display:flex;align-items:center;gap:10px;color:var(--cream);font-family:'Anton',sans-serif;font-size:21px;letter-spacing:1px}
-  .brand .b{width:30px;height:30px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .brand{display:flex;align-items:center}
+  .logo-chip{background:var(--cream);border-radius:13px;padding:6px 12px;display:flex;align-items:center;box-shadow:0 7px 18px -9px rgba(0,0,0,.5)}
+  .logo-chip img{height:60px;width:auto;display:block}
   nav.links{display:flex;align-items:center;gap:26px}
   nav.links a{color:var(--cream);font-weight:600;font-size:15px;opacity:.92}
   nav.links a:hover{opacity:1;color:var(--mustard)}
@@ -176,7 +178,7 @@
 
   @media(max-width:880px){
     .menu-toggle{display:block}
-    nav.links{position:absolute;top:64px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:2px solid var(--red-dark);display:none}
+    nav.links{position:absolute;top:80px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:2px solid var(--red-dark);display:none}
     nav.links.open{display:flex}
     nav.links a{padding:12px 0;border-bottom:1px solid rgba(251,246,238,.12)}
     nav.links .btn{margin-top:10px;justify-content:center}
@@ -195,9 +197,8 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top">
-      <svg class="b" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 28c0-4 5-7 19-7s19 3 19 7-5 7-19 7S5 32 5 28Z" fill="#f4d9a6"/><rect x="9" y="25" width="30" height="5" rx="2.5" fill="#7e1414"/><path d="M11 25c3 1.4 7 2 13 2s10-.6 13-2" stroke="#e8a33d" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-      ATTWELL FOOD
+    <a class="brand" href="#top" aria-label="Attwell Food home">
+      <span class="logo-chip"><img src="assets/logo.png" alt="Attwell Food — serving since 1994"></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav class="links" id="nav">
@@ -405,4 +406,4 @@
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
