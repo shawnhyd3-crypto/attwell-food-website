@@ -50,7 +50,7 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bevan&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#fbf6ee; --cream-2:#f4ead9; --paper:#fffdf9;
@@ -73,10 +73,9 @@
 
   /* Header */
   header{position:sticky;top:0;z-index:50;background:var(--red);border-bottom:2px solid var(--red-dark)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
   .brand{display:flex;align-items:center}
-  .logo-chip{background:var(--cream);border-radius:13px;padding:6px 12px;display:flex;align-items:center;box-shadow:0 7px 18px -9px rgba(0,0,0,.5)}
-  .logo-chip img{height:60px;width:auto;display:block}
+  .signlogo{display:inline-block;font-family:'Bevan',Georgia,serif;color:#f6f0e2;background:#4e7d35;border:2.5px solid #f4ecd8;border-radius:8px;padding:8px 16px 7px;font-size:21px;letter-spacing:.5px;line-height:1;white-space:nowrap;box-shadow:0 6px 16px -8px rgba(0,0,0,.5)}
   nav.links{display:flex;align-items:center;gap:26px}
   nav.links a{color:var(--cream);font-weight:600;font-size:15px;opacity:.92}
   nav.links a:hover{opacity:1;color:var(--mustard)}
@@ -178,7 +177,7 @@
 
   @media(max-width:880px){
     .menu-toggle{display:block}
-    nav.links{position:absolute;top:80px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:2px solid var(--red-dark);display:none}
+    nav.links{position:absolute;top:70px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:2px solid var(--red-dark);display:none}
     nav.links.open{display:flex}
     nav.links a{padding:12px 0;border-bottom:1px solid rgba(251,246,238,.12)}
     nav.links .btn{margin-top:10px;justify-content:center}
@@ -198,7 +197,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Attwell Food home">
-      <span class="logo-chip"><img src="assets/logo.png" alt="Attwell Food — serving since 1994"></span>
+      <span class="signlogo">ATTWELL FOOD</span>
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav class="links" id="nav">
@@ -375,8 +374,8 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <img src="assets/logo.png" alt="Attwell Food — serving since 1994">
-        <p>A neighbourhood hotdog &amp; sausage cart. Hot, fresh, made to order — at the end of the driveway, 272 Attwell Dr, Etobicoke.</p>
+        <span class="signlogo" style="font-size:27px;padding:10px 20px 9px">ATTWELL FOOD</span>
+        <p style="margin-top:16px">A neighbourhood hotdog &amp; sausage cart, serving Attwell Dr since 1994. Hot, fresh, made to order — at the end of the driveway, 272 Attwell Dr, Etobicoke.</p>
       </div>
       <div>
         <h5>Menu</h5>
@@ -406,4 +405,4 @@
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
