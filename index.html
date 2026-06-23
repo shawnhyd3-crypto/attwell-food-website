@@ -1,58 +1,41 @@
 <!DOCTYPE html>
 <!--
-  ATTWELL FOOD — WEBSITE ROUGH DRAFT  (v2)
-  Prepared by Hyde Tech Solutions · 2026-06-23
-
-  STATUS: Rough draft / mockup for owner review. Single self-contained HTML file.
-
-  v2 CHANGES:
-    • Re-centred on SAUSAGES + HOTDOGS (per Shawn + Google Maps), not the burger.
-    • New palette: warm cream + deep cart-red (#9E1B1B) + charcoal + golden mustard.
-    • Brand kept simply "Attwell Food" (no owner/"Joseph's" story per Shawn).
-
-  CONFIRMED via Google Maps (cid 10535731172439424516), June 2026:
-    • 272 Attwell Dr, Etobicoke, ON M9W 6M3 · (647) 991-7778
-    • Outdoor red hotdog cart on the Catch The Fire lot (end of the driveway)
-    • 4.6★ (31 reviews) · $1–10 per person · Dine-in + Takeout (no delivery)
-    • Menu highlight "Mild Sausage"; reviews dominated by hotdog + fries; "made to order"
-    • Open Mon–Fri 11am–3pm (closed weekends; outdoor cart — confirm winter)
-
-  PLACEHOLDERS TO REPLACE WITH OWNER INPUT:
-    • Real menu items + prices (only general $1–10 range is public)
-    • Real photos (swap the dashed "PHOTO" blocks — e.g. the red cart, a loaded dog)
-    • Logo, social links
+  ATTWELL FOOD — WEBSITE  (v3)  ·  Hyde Tech Solutions · 2026-06-23
+  v3: real assets pulled from their Google profile — actual logo ("serving since 1994"),
+  real food/cart photos, and the REAL menu + prices off their menu board. De-templated
+  layout + tightened copy to remove the "AI-made" feel. SEO/schema/a11y bones retained.
+  Photos sourced from the owners' Google Business profile — confirm rights / swap for
+  hi-res originals before launch.
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Attwell Food — Famous for the Sausages | Etobicoke</title>
-<meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage stand at 272 Attwell Dr, Etobicoke. Hot, fresh, made to order. Open weekdays 11am–3pm.">
+<meta name="description" content="Attwell Food — a neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke, serving since 1994. Sausages, hot dogs, burgers, fries & poutine. Open weekdays 11am–3pm.">
 <link rel="canonical" href="https://shawnhyd3-crypto.github.io/attwell-food-website/">
 <meta name="theme-color" content="#9e1b1b">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239e1b1b'/%3E%3Crect x='5' y='13' width='22' height='6' rx='3' fill='%23f4d9a6'/%3E%3Cpath d='M7 16c3 1.6 15 1.6 18 0' stroke='%23e8a33d' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-<!-- Open Graph / social -->
 <meta property="og:title" content="Attwell Food — Famous for the Sausages">
-<meta property="og:description" content="A neighbourhood hotdog & sausage stand at 272 Attwell Dr, Etobicoke. Hot, fresh, made to order. Open weekdays 11am–3pm.">
+<meta property="og:description" content="A neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke — serving since 1994. Open weekdays 11am–3pm.">
 <meta property="og:image" content="https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png">
 <meta property="og:url" content="https://shawnhyd3-crypto.github.io/attwell-food-website/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Attwell Food — Famous for the Sausages">
-<meta name="twitter:description" content="Neighbourhood hotdog & sausage stand in Etobicoke. Hot, fresh, made to order.">
+<meta name="twitter:description" content="Neighbourhood hotdog & sausage cart in Etobicoke, serving since 1994.">
 <meta name="twitter:image" content="https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png">
-<!-- LocalBusiness (FastFood) structured data -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"FastFood",
   "name":"Attwell Food",
-  "description":"Neighbourhood hotdog & sausage stand — hot, fresh, made to order.",
+  "description":"Neighbourhood hotdog & sausage cart on Attwell Dr, Etobicoke — serving since 1994.",
   "url":"https://shawnhyd3-crypto.github.io/attwell-food-website/",
   "telephone":"+1-647-991-7778",
   "priceRange":"$",
-  "servesCuisine":["Hot Dogs","Sausages","Fries","Fast Food"],
+  "servesCuisine":["Hot Dogs","Sausages","Burgers","Fries","Fast Food"],
   "image":"https://shawnhyd3-crypto.github.io/attwell-food-website/og-image.png",
   "address":{"@type":"PostalAddress","streetAddress":"272 Attwell Dr","addressLocality":"Etobicoke","addressRegion":"ON","postalCode":"M9W 6M3","addressCountry":"CA"},
   "geo":{"@type":"GeoCoordinates","latitude":43.6959953,"longitude":-79.5910553},
@@ -66,345 +49,360 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#fbf6ee;       /* warm cream page bg */
-    --cream-2:#f3e7d5;     /* subtle */
-    --red:#9e1b1b;         /* deep cart red (primary) */
-    --red-dark:#7e1414;
-    --red-deep:#1f100e;    /* near-black red for footer */
-    --mustard:#e8a33d;     /* golden mustard accent */
-    --ink:#241f1d;         /* charcoal text */
-    --muted:#6e635a;
-    --line:#e7d9c5;
-    --radius:18px;
-    --shadow:0 18px 40px -20px rgba(36,31,29,.35);
-    --maxw:1120px;
+    --cream:#fbf6ee; --cream-2:#f4ead9; --paper:#fffdf9;
+    --red:#9e1b1b; --red-dark:#7e1414; --red-deep:#2a100d;
+    --mustard:#e8a33d; --ink:#241f1d; --muted:#6e635a; --line:#e7d9c5;
+    --radius:16px; --shadow:0 16px 36px -22px rgba(36,31,29,.5); --maxw:1140px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:0 0 8px 0;font-weight:700}
-  .skip:focus{left:0}
-  a:focus-visible,button:focus-visible,.btn:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
-  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-  h1,h2,h3,.display{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.5px;line-height:1;text-transform:uppercase}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.anton{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.4px;line-height:1;text-transform:uppercase}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .script{font-family:'Caveat',cursive;font-weight:700;text-transform:none;letter-spacing:0}
+  .skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:0 0 8px 0;font-weight:700}
+  .skip:focus{left:0}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
-  /* ---------- Header ---------- */
-  header{position:sticky;top:0;z-index:50;background:var(--red);border-bottom:3px solid var(--mustard)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:11px;color:var(--cream)}
-  .brand .mark{width:38px;height:38px;flex:none}
-  .brand .name{font-family:'Anton',sans-serif;font-size:23px;letter-spacing:1px;line-height:1;text-transform:uppercase;color:var(--cream)}
-  .brand .name b{color:var(--mustard);font-weight:400}
-  nav.links{display:flex;align-items:center;gap:28px}
-  nav.links a{color:var(--cream);font-weight:600;font-size:15px;opacity:.92;transition:opacity .15s}
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--red);border-bottom:2px solid var(--red-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--cream);font-family:'Anton',sans-serif;font-size:21px;letter-spacing:1px}
+  .brand .b{width:30px;height:30px}
+  nav.links{display:flex;align-items:center;gap:26px}
+  nav.links a{color:var(--cream);font-weight:600;font-size:15px;opacity:.92}
   nav.links a:hover{opacity:1;color:var(--mustard)}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--ink);font-weight:700;padding:11px 18px;border-radius:999px;font-size:15px;border:0;cursor:pointer;transition:transform .12s,background .15s}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--ink);font-weight:700;padding:10px 17px;border-radius:999px;font-size:15px;border:0;cursor:pointer;transition:transform .12s,background .15s}
   .btn:hover{background:#d8902b;transform:translateY(-1px)}
-  .btn.red{background:var(--red);color:#fff}
-  .btn.red:hover{background:var(--red-dark)}
-  .btn.ghost{background:transparent;color:var(--cream);border:2px solid rgba(251,246,238,.4)}
-  .btn.ghost:hover{border-color:var(--mustard);color:var(--mustard)}
-  .btn.dark{background:var(--ink);color:var(--cream)}
-  .btn.dark:hover{background:#3a322e}
+  .btn.red{background:var(--red);color:#fff}.btn.red:hover{background:var(--red-dark)}
+  .btn.ink{background:var(--ink);color:var(--cream)}.btn.ink:hover{background:#3a322e}
   .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px}
-  .menu-toggle span{display:block;width:26px;height:3px;background:var(--cream);border-radius:3px;margin:5px 0}
+  .menu-toggle span{display:block;width:25px;height:3px;background:var(--cream);border-radius:3px;margin:5px 0}
 
-  /* ---------- Hero ---------- */
-  .hero{position:relative;background:
-      radial-gradient(120% 90% at 88% 0%, rgba(232,163,61,.22), transparent 55%),
-      linear-gradient(180deg,#fffaf2 0%, var(--cream) 100%);overflow:hidden}
-  .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,var(--red) 0 22px,var(--mustard) 22px 44px);opacity:.9}
-  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center;padding-top:64px;padding-bottom:74px}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(158,27,27,.08);color:var(--red);border:1px solid rgba(158,27,27,.22);padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px;letter-spacing:.4px;text-transform:uppercase}
-  .hero h1{font-size:clamp(46px,7.2vw,88px);margin:20px 0 0;color:var(--ink)}
-  .hero h1 .accent{color:var(--red)}
-  .hero p.lede{font-size:19px;color:#4a423b;max-width:33ch;margin-top:18px}
-  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-  .hero .meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:14px;font-weight:500}
-  .hero .meta b{color:var(--ink)}
-  .stars{display:inline-flex;align-items:center;gap:6px;color:#c98a1e;font-weight:700}
+  /* Hero — asymmetric, real photo */
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;padding:60px 22px 66px}
+  .eyebrow{font-family:'Caveat',cursive;font-weight:700;font-size:25px;color:var(--red);transform:rotate(-2deg);display:inline-block}
+  .hero h1{font-size:clamp(48px,7.4vw,92px);margin:6px 0 0;color:var(--ink)}
+  .hero h1 .a{color:var(--red)}
+  .hero .lede{font-size:18px;color:#4a423b;max-width:40ch;margin-top:16px}
+  .hero .cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}
+  .hero .meta{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:14px;font-weight:600;align-items:center}
+  .hero .meta .star{color:#c98a1e}
+  .hero-photo{position:relative}
+  .hero-photo img.main{width:100%;height:440px;object-fit:cover;border-radius:20px;box-shadow:var(--shadow)}
+  .hero-photo .rating{position:absolute;left:-14px;top:20px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 13px;box-shadow:var(--shadow);font-weight:800;font-size:14px;display:flex;align-items:center;gap:7px}
+  .hero-photo .rating b{color:#c98a1e}
+  .hero-photo .since{position:absolute;right:-12px;bottom:-14px;width:128px;height:128px;background:var(--red);color:var(--cream);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:4px solid var(--cream);box-shadow:var(--shadow);transform:rotate(7deg)}
+  .hero-photo .since .n{font-family:'Anton',sans-serif;font-size:30px;line-height:.9}
+  .hero-photo .since .t{font-family:'Caveat',cursive;font-weight:700;font-size:16px}
 
-  .hero-art{position:relative;min-height:360px;display:flex;align-items:center;justify-content:center}
-  .photo-hero{position:absolute;inset:0;border:2px dashed rgba(158,27,27,.3);border-radius:24px;display:flex;align-items:center;justify-content:center;color:#a8917a;font-size:13px;font-weight:600;text-align:center;background:linear-gradient(135deg, rgba(158,27,27,.07), rgba(232,163,61,.10))}
-  .stamp{position:relative;z-index:2;width:172px;height:172px;border-radius:50%;background:var(--red);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:5px solid var(--cream);box-shadow:0 20px 44px -16px rgba(158,27,27,.6);transform:rotate(-8deg)}
-  .stamp .t{font-family:'Anton',sans-serif;font-size:26px;line-height:.95;letter-spacing:1px}
-  .stamp .s{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--mustard);margin-top:6px}
-  .stamp .ring{position:absolute;inset:10px;border:1.5px dashed rgba(251,246,238,.5);border-radius:50%}
+  /* Fact band */
+  .facts{background:var(--red);color:var(--cream)}
+  .facts .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;padding:15px 22px;font-weight:600;font-size:14.5px;text-align:center}
+  .facts .dot{color:var(--mustard)}
 
-  /* ---------- Value strip ---------- */
-  .strip{background:var(--red);color:var(--cream)}
-  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:18px 22px;text-align:center}
-  .strip .item{display:flex;align-items:center;justify-content:center;gap:11px;font-weight:700;font-size:15px}
-  .strip .item svg{flex:none;color:var(--mustard)}
-  .strip .sep{width:1px;background:rgba(251,246,238,.22)}
-
-  /* ---------- Sections ---------- */
-  section{padding:78px 0}
-  .section-head{text-align:center;max-width:660px;margin:0 auto 46px}
-  .section-head .kicker{color:var(--red);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:13px}
-  .section-head h2{font-size:clamp(32px,5vw,50px);margin:12px 0 14px;color:var(--ink)}
-  .section-head p{color:var(--muted);font-size:17px}
+  /* Section heads */
+  section{padding:74px 0}
+  .kick{font-family:'Caveat',cursive;font-weight:700;font-size:24px;color:var(--red)}
+  .h-left{max-width:760px;margin-bottom:34px}
+  .h-left h2{font-size:clamp(30px,4.6vw,46px);margin-top:2px;color:var(--ink)}
+  .h-left p{color:var(--muted);font-size:17px;margin-top:10px}
 
   /* Menu */
-  #menu{background:var(--cream)}
-  .menu-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start}
-  .feature-card{background:var(--red);color:var(--cream);border-radius:var(--radius);padding:34px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-  .feature-card .tag{position:absolute;top:20px;right:-42px;background:var(--mustard);color:var(--ink);font-weight:800;font-size:12px;letter-spacing:1px;padding:7px 52px;transform:rotate(38deg)}
-  .feature-card h3{font-size:32px;margin-bottom:8px}
-  .feature-card p{color:#f3ddd9}
-  .feature-card .hl{font-family:'Anton',sans-serif;color:var(--mustard);font-size:20px;margin:16px 0 4px;letter-spacing:.5px}
-  .photo-feature{margin-top:20px;height:170px;border:2px dashed rgba(251,246,238,.32);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#e7c9c4;font-size:13px;font-weight:600;text-align:center}
-  .menu-list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 22px;box-shadow:var(--shadow)}
-  .menu-list .mhd{display:flex;align-items:baseline;justify-content:space-between;padding:16px 0 8px;border-bottom:2px solid var(--cream-2)}
-  .menu-list .mhd h4{font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink)}
-  .menu-list .mhd .sample{font-size:11px;font-weight:700;color:var(--ink);background:var(--mustard);padding:3px 9px;border-radius:999px;letter-spacing:.5px}
-  .row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
-  .row:last-child{border-bottom:0}
-  .row .nm{font-weight:600}
-  .row .nm small{display:block;font-weight:400;color:var(--muted);font-size:13px}
-  .row .pr{font-family:'Anton',sans-serif;color:var(--red);font-size:19px;white-space:nowrap}
-  .row .pr.tbd{color:#cdbfac}
-  .menu-note{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
-  .quotes{background:var(--cream)}
-  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .qcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-  .qcard .qs{color:#c98a1e;letter-spacing:2px;font-size:14px}
-  .qcard p{margin:10px 0 16px;color:var(--ink);font-size:16px;flex:1}
-  .qcard .who{font-weight:700;font-size:14px}
-  .qcard .who span{display:block;color:var(--muted);font-weight:500;font-size:12px;margin-top:2px}
-  @media(max-width:880px){.qgrid{grid-template-columns:1fr}}
+  #menu{background:var(--paper)}
+  .menu-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+  .mcat{margin-bottom:26px}
+  .mcat h3{font-size:21px;letter-spacing:.6px;color:var(--red);display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .mcat h3:after{content:"";flex:1;height:2px;background:var(--cream-2)}
+  .mrow{display:flex;align-items:baseline;gap:10px;padding:7px 0}
+  .mrow .nm{font-weight:600}
+  .mrow .nm small{color:var(--muted);font-weight:400}
+  .mrow .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+  .mrow .pr{font-weight:800;color:var(--ink);white-space:nowrap}
+  .mside{position:sticky;top:84px}
+  .mside img{width:100%;height:300px;object-fit:cover;border-radius:14px;box-shadow:var(--shadow)}
+  .mside .cap{font-family:'Caveat',cursive;font-weight:700;font-size:20px;color:var(--muted);text-align:center;margin-top:10px;transform:rotate(-1.5deg)}
+  .mnote{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
 
-  /* About */
-  #about{background:linear-gradient(180deg,#fff 0%, var(--cream) 100%)}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
-  .photo-about{height:340px;border:2px dashed var(--line);border-radius:var(--radius);background:var(--cream-2);display:flex;align-items:center;justify-content:center;color:#ad9c85;font-weight:600;font-size:13px;text-align:center}
-  .about-grid h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:18px;color:var(--ink)}
-  .about-grid p{color:#4a423b;font-size:17px;margin-bottom:16px}
-  .callout{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:12px;padding:18px 20px;margin-top:8px}
-  .callout svg{flex:none;margin-top:2px;color:var(--red)}
-  .callout b{display:block;margin-bottom:2px}
-  .callout span{color:var(--muted);font-size:15px}
+  /* Story */
+  #story{background:var(--cream)}
+  .story-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+  .story-photos{position:relative}
+  .story-photos .big{width:100%;height:380px;object-fit:cover;border-radius:18px;box-shadow:var(--shadow)}
+  .story-photos .small{position:absolute;right:-16px;bottom:-22px;width:172px;height:172px;object-fit:cover;border-radius:14px;border:5px solid var(--cream);box-shadow:var(--shadow);transform:rotate(4deg)}
+  .story-grid p{color:#4a423b;font-size:17px;margin-top:14px}
+  .story-grid p:first-of-type{margin-top:0}
+  .badge-line{display:inline-flex;align-items:center;gap:9px;margin-top:20px;background:var(--cream-2);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px;color:var(--red)}
+
+  /* Reviews */
+  #reviews{background:var(--paper)}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .qcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+  .qcard .qs{color:#c98a1e;letter-spacing:2px;font-size:14px}
+  .qcard p{margin:9px 0 14px;font-size:15.5px;flex:1}
+  .qcard .who{font-weight:700;font-size:14px}
+  .qcard .who span{display:block;color:var(--muted);font-weight:500;font-size:12px;margin-top:1px}
 
   /* Visit */
   #visit{background:var(--red);color:var(--cream)}
-  #visit .section-head h2{color:var(--cream)}
-  #visit .section-head .kicker{color:var(--mustard)}
-  #visit .section-head p{color:#f1d9d4}
-  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-  .info-card{background:var(--red-dark);border:1px solid rgba(251,246,238,.14);border-radius:var(--radius);padding:28px}
-  .info-card h3{font-size:22px;color:var(--mustard);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .hours-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(251,246,238,.14);font-size:15px}
-  .hours-row:last-child{border-bottom:0}
-  .hours-row .d{color:#f1d9d4}
-  .hours-row .h{font-weight:700;color:var(--cream)}
-  .hours-row.closed .h{color:#d9a9a3;font-weight:500}
-  .contact-line{display:flex;align-items:center;gap:13px;padding:11px 0;font-size:16px}
-  .contact-line svg{flex:none;color:var(--mustard)}
-  .contact-line a{font-weight:600}
-  .visit-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-  .map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:340px}
-  .map-embed{border:0;width:100%;height:100%;min-height:340px;border-radius:var(--radius)}
-  .pay-note{margin-top:16px;font-size:13px;color:#e3bdb7}
+  #visit .kick{color:var(--mustard)}#visit .h-left h2{color:var(--cream)}#visit .h-left p{color:#f1d9d4}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .vcard{background:var(--red-dark);border:1px solid rgba(251,246,238,.14);border-radius:var(--radius);padding:26px}
+  .vcard h3{font-size:20px;color:var(--mustard);margin-bottom:14px}
+  .hrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(251,246,238,.13);font-size:15px}
+  .hrow:last-child{border-bottom:0}.hrow .h{font-weight:700}.hrow.c .h{color:#d9a9a3;font-weight:500}
+  .cline{display:flex;align-items:center;gap:12px;padding:9px 0;font-size:16px}.cline svg{flex:none;color:var(--mustard)}
+  .vcta{display:flex;gap:11px;flex-wrap:wrap;margin-top:18px}
+  .pay{margin-top:14px;font-size:13px;color:#e3bdb7}
+  .map{border:0;width:100%;height:100%;min-height:330px;border-radius:var(--radius)}
+  .mapwrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:330px}
 
   /* Footer */
-  footer{background:var(--red-deep);color:#c9b6ad;padding:50px 0 28px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(251,246,238,.12)}
-  .foot-brand .name{font-family:'Anton',sans-serif;font-size:24px;color:var(--cream);letter-spacing:1px;text-transform:uppercase}
-  .foot-brand .name b{color:var(--mustard);font-weight:400}
-  .foot-brand p{margin-top:12px;font-size:14px;max-width:34ch}
-  footer h5{color:var(--cream);font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;font-weight:800}
-  footer ul{list-style:none}
-  footer ul li{margin-bottom:9px;font-size:14px}
+  footer{background:var(--red-deep);color:#c9b6ad;padding:46px 0 26px}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(251,246,238,.12)}
+  .fbrand img{width:150px;background:var(--cream);border-radius:12px;padding:8px}
+  .fbrand p{margin-top:12px;font-size:14px;max-width:34ch}
+  footer h5{color:var(--cream);font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:13px;font-weight:800}
+  footer ul{list-style:none}footer ul li{margin-bottom:8px;font-size:14px}
   footer a:hover{color:var(--mustard)}
-  .socials{display:flex;gap:12px;margin-top:6px}
-  .socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(251,246,238,.22);display:flex;align-items:center;justify-content:center;color:var(--cream)}
-  .socials a:hover{background:var(--mustard);border-color:var(--mustard);color:var(--ink)}
-  .copyright{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:13px;color:#9a847b}
-  .copyright a{color:#b8a298;text-decoration:underline}
+  .copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:20px;font-size:13px;color:#9a847b}
+  .copy a{color:#b8a298;text-decoration:underline}
 
   @media(max-width:880px){
     .menu-toggle{display:block}
-    nav.links{position:absolute;top:70px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 20px;border-bottom:3px solid var(--mustard);display:none}
+    nav.links{position:absolute;top:64px;left:0;right:0;background:var(--red);flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:2px solid var(--red-dark);display:none}
     nav.links.open{display:flex}
-    nav.links a{padding:13px 0;border-bottom:1px solid rgba(251,246,238,.12)}
-    nav.links .btn{margin-top:12px;justify-content:center}
-    .hero .wrap{grid-template-columns:1fr;padding-top:46px;padding-bottom:52px}
-    .hero-art{min-height:300px;margin-top:8px}
-    .menu-grid,.about-grid,.visit-grid{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .strip .wrap{grid-template-columns:1fr;gap:14px}
-    .strip .sep{display:none}
+    nav.links a{padding:12px 0;border-bottom:1px solid rgba(251,246,238,.12)}
+    nav.links .btn{margin-top:10px;justify-content:center}
+    .hero .wrap{grid-template-columns:1fr;gap:40px;padding-top:44px}
+    .hero-photo img.main{height:360px}
+    .menu-wrap,.story-grid,.visit-grid{grid-template-columns:1fr;gap:34px}
+    .mside{position:static}.story-photos{margin-bottom:30px}
+    .qgrid{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
   }
-  @media(max-width:520px){.foot-grid{grid-template-columns:1fr}.hero .meta{gap:14px}section{padding:56px 0}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}section{padding:54px 0}.hero-photo .since{width:108px;height:108px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#menu">Skip to menu</a>
 
-<!-- HEADER -->
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Attwell Food home">
-      <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M5 28c0-4 5-7 19-7s19 3 19 7-5 7-19 7S5 32 5 28Z" fill="#f4d9a6"/>
-        <path d="M10 27c2.5-2 7-3 14-3s11.5 1 14 3c-2 2-7 3.2-14 3.2S12 29 10 27Z" fill="#9e1b1b"/>
-        <path d="M11 25c3 1.4 7 2 13 2s10-.6 13-2" stroke="#e8a33d" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span class="name">ATT<b>WELL</b> FOOD</span>
+    <a class="brand" href="#top">
+      <svg class="b" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 28c0-4 5-7 19-7s19 3 19 7-5 7-19 7S5 32 5 28Z" fill="#f4d9a6"/><rect x="9" y="25" width="30" height="5" rx="2.5" fill="#7e1414"/><path d="M11 25c3 1.4 7 2 13 2s10-.6 13-2" stroke="#e8a33d" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      ATTWELL FOOD
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav class="links" id="nav">
       <a href="#menu">Menu</a>
-      <a href="#about">Our Story</a>
+      <a href="#story">Our Story</a>
       <a href="#visit">Visit</a>
-      <a class="btn" href="tel:+16479917778">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg>
-        Call
-      </a>
+      <a class="btn" href="tel:+16479917778">Call 647-991-7778</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <a id="top"></a>
 <main id="main">
-<section class="hero">
+
+<!-- HERO -->
+<section class="hero" style="padding-top:0">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Hotdogs · Sausages · Fresh-cut fries — Etobicoke</span>
-      <h1>Famous for<br>the <span class="accent">sausages.</span></h1>
-      <p class="lede">A neighbourhood hotdog stand at the end of the driveway — hot, fresh, made to order, and easy on the wallet.</p>
+      <span class="eyebrow">Serving Attwell Drive since 1994</span>
+      <h1>Famous for<br>the <span class="a">sausages.</span></h1>
+      <p class="lede">A little red food cart at the end of the driveway in Etobicoke — grilling hot dogs, sausages and hand-cut fries to order since 1994.</p>
       <div class="cta">
         <a class="btn red" href="#menu">See the menu</a>
-        <a class="btn dark" href="#visit">Get directions</a>
+        <a class="btn ink" href="#visit">Find the cart</a>
       </div>
       <div class="meta">
-        <span class="stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3 6.2 3.7-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg>
-          4.6 · 31 Google reviews
-        </span>
-        <span><b>Open</b> Mon–Fri · 11am–3pm</span>
-        <span><b>Dine-in</b> &amp; takeout</span>
+        <span><span class="star">★</span> 4.6 on Google · 31 reviews</span>
+        <span>Mon–Fri · 11am–3pm</span>
+        <span>Dine-in &amp; takeout</span>
       </div>
     </div>
-    <div class="hero-art">
-      <div class="photo-hero">PHOTO — a loaded hotdog / sausage<br>(or the red cart) goes here</div>
-      <div class="stamp" aria-label="Made fresh to order">
-        <span class="ring"></span>
-        <span class="t">MADE<br>FRESH</span>
-        <span class="s">TO ORDER</span>
-      </div>
+    <div class="hero-photo">
+      <img class="main" src="assets/hero-dog.jpg" alt="A loaded hot dog from Attwell Food, made to order">
+      <div class="rating"><b>4.6 ★</b> Google</div>
+      <div class="since"><span class="n">’94</span><span class="t">since</span></div>
     </div>
   </div>
 </section>
 
-<!-- VALUE STRIP -->
-<div class="strip">
+<!-- FACT BAND -->
+<div class="facts">
   <div class="wrap">
-    <div class="item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 14c0-3 3-5 9-5s9 2 9 5-3 4-9 4-9-1-9-4Z"/><path d="M6 13c2-1 4-1.4 6-1.4S16 12 18 13" stroke="#9e1b1b" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-      Sausages &amp; dogs, made to order
-    </div>
-    <div class="sep"></div>
-    <div class="item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 9h10l-1 11a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2L7 9Zm2-5h2v4H9zm4 0h2v4h-2z"/></svg>
-      Fresh-cut fries you'll cross town for
-    </div>
-    <div class="sep"></div>
-    <div class="item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6Z"/></svg>
-      Quality ingredients, honest prices
-    </div>
+    <span>Mild &amp; spicy sausages</span><span class="dot">•</span>
+    <span>Beef, chicken &amp; veg dogs</span><span class="dot">•</span>
+    <span>Hand-cut fries &amp; poutine</span><span class="dot">•</span>
+    <span>Combos $10</span><span class="dot">•</span>
+    <span>Debit, credit &amp; cash</span>
   </div>
 </div>
 
 <!-- MENU -->
 <section id="menu">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">The Menu</span>
-      <h2>Hot off the grill</h2>
-      <p>Sausages, hotdogs and fresh-cut fries — fast, fresh, and made to order on your lunch break.</p>
+    <div class="h-left">
+      <span class="kick">what's on the cart</span>
+      <h2>The menu</h2>
+      <p>Everything grilled to order. Sausages are the signature — but the $5 dogs and burgers have their own fan club.</p>
     </div>
-    <div class="menu-grid">
-      <div class="feature-card">
-        <span class="tag">SIGNATURE</span>
-        <h3>The Sausages</h3>
-        <p>What we're known for — high-quality sausages grilled to order and dressed however you like. Regulars call it the best dog of their life.</p>
-        <div class="hl">Mild · Loaded · Classic Dog</div>
-        <div class="photo-feature">PHOTO — a grilled sausage / loaded hotdog</div>
-      </div>
-      <div class="menu-list">
-        <div class="mhd"><h4>Hotdogs &amp; Sausages</h4><span class="sample">sample menu</span></div>
-        <div class="row"><span class="nm">Mild Sausage <small>house favourite, grilled to order</small></span><span class="pr tbd">$—</span></div>
-        <div class="row"><span class="nm">Classic Hot Dog <small>all the fixings</small></span><span class="pr tbd">$—</span></div>
-        <div class="row"><span class="nm">Loaded Dog <small>pile on the toppings</small></span><span class="pr tbd">$—</span></div>
-        <div class="row"><span class="nm">Spicy Sausage <small>for the heat-seekers</small></span><span class="pr tbd">$—</span></div>
-
-        <div class="mhd"><h4>Sides</h4></div>
-        <div class="row"><span class="nm">Fresh-Cut Fries <small>the neighbourhood favourite</small></span><span class="pr tbd">$—</span></div>
-        <div class="row"><span class="nm">Loaded Fries <small>ask about today's topping</small></span><span class="pr tbd">$—</span></div>
-
-        <div class="mhd"><h4>Drinks</h4></div>
-        <div class="row"><span class="nm">Pop / Bottled Water</span><span class="pr tbd">$—</span></div>
-      </div>
-    </div>
-    <p class="menu-note">Sample layout only — final items &amp; prices to confirm with the owners. Most items $1–10. Cards, debit &amp; tap accepted.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="photo-about">PHOTO — the red cart at the end of the driveway</div>
-    <div>
-      <span class="section-head kicker" style="display:block;text-align:left">Our Story</span>
-      <h2>A hidden gem at the end of the driveway</h2>
-      <p>Tucked on the Catch The Fire lot in Etobicoke, Attwell Food is the little hotdog stand the neighbourhood keeps coming back to — the kind of spot that's almost too good to be true.</p>
-      <p>Everything's hot, fresh and made to order, with quality ingredients and honest prices. Quick, friendly, and worth the trip on your lunch break.</p>
-      <div class="callout">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1 14-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6Z"/></svg>
-        <div>
-          <b>Made fresh, to order</b>
-          <span>No heat lamps, no shortcuts — your food is cooked when you order it. That's why regulars rave about it.</span>
+    <div class="menu-wrap">
+      <div>
+        <div class="mcat">
+          <h3>Sausages</h3>
+          <div class="mrow"><span class="nm">Mild Sausage <small>— beef</small></span><span class="dots"></span><span class="pr">$6</span></div>
+          <div class="mrow"><span class="nm">Spicy Italian Sausage</span><span class="dots"></span><span class="pr">$6</span></div>
+        </div>
+        <div class="mcat">
+          <h3>Hot Dogs</h3>
+          <div class="mrow"><span class="nm">Beef Hot Dog</span><span class="dots"></span><span class="pr">$5</span></div>
+          <div class="mrow"><span class="nm">Chicken Hot Dog</span><span class="dots"></span><span class="pr">$5</span></div>
+          <div class="mrow"><span class="nm">Veggie Hot Dog</span><span class="dots"></span><span class="pr">$5</span></div>
+        </div>
+        <div class="mcat">
+          <h3>Burgers</h3>
+          <div class="mrow"><span class="nm">Beef Burger</span><span class="dots"></span><span class="pr">$5</span></div>
+          <div class="mrow"><span class="nm">Chicken Burger</span><span class="dots"></span><span class="pr">$5</span></div>
+        </div>
+        <div class="mcat">
+          <h3>Combos</h3>
+          <div class="mrow"><span class="nm">Sausage + Fries + Pop</span><span class="dots"></span><span class="pr">$10</span></div>
+          <div class="mrow"><span class="nm">Hot Dog + Fries + Pop</span><span class="dots"></span><span class="pr">$10</span></div>
+          <div class="mrow"><span class="nm">Burger + Fries + Pop</span><span class="dots"></span><span class="pr">$10</span></div>
+        </div>
+        <div class="mcat">
+          <h3>Extras</h3>
+          <div class="mrow"><span class="nm">Poutine</span><span class="dots"></span><span class="pr">$7</span></div>
+          <div class="mrow"><span class="nm">Fries <small>— small / large</small></span><span class="dots"></span><span class="pr">$5 / $8</span></div>
+          <div class="mrow"><span class="nm">Gravy</span><span class="dots"></span><span class="pr">$1</span></div>
+          <div class="mrow"><span class="nm">Cheese</span><span class="dots"></span><span class="pr">$0.50</span></div>
+          <div class="mrow"><span class="nm">Pop</span><span class="dots"></span><span class="pr">$1.50</span></div>
         </div>
       </div>
+      <div class="mside">
+        <img src="assets/dog2.jpg" alt="A loaded hot dog with toppings from Attwell Food">
+        <div class="cap">loaded just how you like it</div>
+        <p class="mnote">Prices from the cart's menu board — confirm current pricing before launch.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="quotes">
+<!-- STORY -->
+<section id="story">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">From the regulars</span>
-      <h2>People don't stop raving</h2>
-      <p>Straight from their Google reviews.</p>
+    <div class="story-grid">
+      <div class="story-photos">
+        <img class="big" src="assets/cart.jpg" alt="The red Attwell Food cart parked on Attwell Drive">
+        <img class="small" src="assets/sausage.jpg" alt="A grilled sausage on a bun with toppings">
+      </div>
+      <div>
+        <span class="kick">our story</span>
+        <h2 style="font-size:clamp(28px,4.4vw,42px);margin-top:2px">The little red cart at the end of the driveway</h2>
+        <p>Park on the Catch The Fire lot, follow the smell of the grill, and you'll find the red Attwell Food cart that's been feeding the neighbourhood since 1994.</p>
+        <p>It's nothing fancy — and that's the point. Good sausages and dogs, hand-cut fries, fair prices, and a friendly face. Everything's made to order while you wait.</p>
+        <span class="badge-line">★ 4.6 from 31 Google reviews — "best hot dog of my life"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="h-left">
+      <span class="kick">don't take our word for it</span>
+      <h2>What the regulars say</h2>
     </div>
     <div class="qgrid">
       <div class="qcard"><div class="qs">★★★★★</div><p>"Had the best hot dog of my life. Super high quality ingredients for a very fair price. Plus super nice guy and great service."</p><div class="who">Nigel T.<span>Google review</span></div></div>
       <div class="qcard"><div class="qs">★★★★★</div><p>"The food is always hot, fresh and made to order. I've had the hotdog and the sausage — so good!"</p><div class="who">Stephanie M.<span>Google review</span></div></div>
       <div class="qcard"><div class="qs">★★★★★</div><p>"Unbeatable fries and price. Must give it a shot and support a small business."</p><div class="who">Verified Google review</div></div>
     </div>
-    <p class="menu-note">Real Google reviews (4.6★ from 31). Names shown as on Google — confirm or anonymize before launch.</p>
+    <p class="mnote" style="margin-top:22px">Real Google reviews (4.6★ from 31). Names shown as on Google — confirm or anonymize before launch.</p>
   </div>
 </section>
 
 <!-- VISIT -->
 <section id="visit">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Come Visit</span>
-      <h2>Find us &amp; hours</h2>
+    <div class="h-left">
+      <span class="kick">come find us</span>
+      <h2>Visit &amp; hours</h2>
       <p>Look for the red cart at the end of the driveway, 272 Attwell Dr — weekday lunches, easy parking.</p>
     </div>
     <div class="visit-grid">
-      <div class="info-card">
-        <h3>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 
+      <div class="vcard">
+        <h3>Hours</h3>
+        <div class="hrow"><span>Monday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow"><span>Tuesday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow"><span>Wednesday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow"><span>Thursday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow"><span>Friday</span><span class="h">11am – 3pm</span></div>
+        <div class="hrow c"><span>Saturday</span><span class="h">Closed</span></div>
+        <div class="hrow c"><span>Sunday</span><span class="h">Closed</span></div>
+        <div style="margin-top:18px">
+          <div class="cline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z"/></svg><a href="tel:+16479917778">647-991-7778</a></div>
+          <div class="cline"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5Z"/></svg>272 Attwell Dr, Etobicoke, ON M9W 6M3</div>
+        </div>
+        <div class="vcta">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Attwell+Food+272+Attwell+Dr+Etobicoke" target="_blank" rel="noopener">Directions</a>
+          <a class="btn ink" href="tel:+16479917778">Call ahead</a>
+        </div>
+        <p class="pay">Free parking on-site · Debit, credit &amp; cash · Outdoor cart, so hours can vary seasonally — call ahead in winter.</p>
+      </div>
+      <div class="mapwrap">
+        <iframe class="map" title="Map to Attwell Food" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.700222502024!2d-79.5910553!3d43.69599529999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b39340b953dd3%3A0x92366fae3e42fe04!2sAttwell%20Food!5e0!3m2!1sen!2s!4v1728724723195!5m2!1sen!2s"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img src="assets/logo.png" alt="Attwell Food — serving since 1994">
+        <p>A neighbourhood hotdog &amp; sausage cart. Hot, fresh, made to order — at the end of the driveway, 272 Attwell Dr, Etobicoke.</p>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="#menu">Sausages &amp; hot dogs</a></li>
+          <li><a href="#menu">Burgers &amp; combos</a></li>
+          <li><a href="#menu">Fries &amp; poutine</a></li>
+          <li><a href="#story">Our story</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>272 Attwell Dr, Etobicoke</li>
+          <li>ON M9W 6M3</li>
+          <li><a href="tel:+16479917778">647-991-7778</a></li>
+          <li>Mon–Fri · 11am–3pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Attwell Food · Serving since 1994.</span>
+      <span>Draft site by <a href="https://hydetech.ca" target="_blank" rel="noopener">Hyde Tech Solutions</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
